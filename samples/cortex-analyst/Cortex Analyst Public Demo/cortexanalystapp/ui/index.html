@@ -1,14 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/bug-R-sno-blue.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Cortex Analyst</title>
+    <meta charset="utf-8">
+    <title>CortextAnalystPublicDemoEmberjs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{content-for "head"}}
+
+    <link integrity="" rel="stylesheet" href="/@embroider/virtual/vendor.css">
+    <link integrity="" rel="stylesheet" href="/@embroider/virtual/app.css">
+
+    {{content-for "head-footer"}}
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    {{content-for "body"}}
+
+    <script src="/@embroider/virtual/vendor.js"></script>
+    <script type="module">
+      import Application from './app/app';
+      import environment from './app/config/environment';
+
+      Application.create(environment.APP);
+    </script>
+
+    {{content-for "body-footer"}}
   </body>
 </html>
